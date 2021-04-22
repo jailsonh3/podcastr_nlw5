@@ -1,11 +1,11 @@
 ## APP PODCASTR NLW #05
 
-Obs.: Codigo construido até a 3 aula da semana!
+Obs.: Codigo construido até a 4 aula da semana!
 
 ### VIEW
 
 <div>
-  <img src="./others/podcastr.png" alt="podcastr">
+  <img src="./others/podcastr-play.png" alt="podcastr">
 </div>
 
 ### Installing
