@@ -18,5 +18,6 @@ Obs.: Codigo construido até a 3 aula da semana!
 * Next.js
 * Typescript
 * Javascript
+* SCSS
 
 
