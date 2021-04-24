@@ -1,6 +1,6 @@
 ## APP PODCASTR NLW #05
 
-Obs.: Codigo construido até a 4 aula da semana!
+### semana next level week 5°edição concluido!
 
 ### VIEW
 
@@ -8,10 +8,14 @@ Obs.: Codigo construido até a 4 aula da semana!
   <img src="./others/podcastr-play.png" alt="podcastr">
 </div>
 
-### Installing
+### Instalar as depêndecias
 
 * yarn install
 * npm install
+
+### Exucute os servers
+* yarn server e yarn dev
+* npm server e npm dev
 
 ### Tecnologias
 
