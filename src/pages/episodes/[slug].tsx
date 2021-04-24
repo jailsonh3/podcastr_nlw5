@@ -2,8 +2,10 @@ import format from 'date-fns/format';
 import { ptBR } from 'date-fns/locale';
 import parseISO from 'date-fns/parseISO';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePlayer } from '../../contexts/PlayerContexts';
 import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
@@ -27,8 +29,27 @@ type EpisodeProps = {
 
 export default function Episode({ episode }: EpisodeProps) {
 
+    const { play } = usePlayer()
+
     return (
        <div className={styles.episode}>
+          <Head>
+            <meta name="title" content={episode.title} />
+            <meta name="description" content={episode.description} />
+            <meta property="og:type" content="website"/>
+            {/* <meta property="og:url" content={} /> */}
+            <meta property="og:title" content={episode.title} />
+            <meta property="og:description" content={episode.description} />
+            <meta property="og:image" content={episode.thumbnail} />
+
+            <meta property="twitter:card" content="summary_large_image" />
+            {/* <meta property="twitter:url" content="https://metatags.io/" /> */}
+            <meta property="twitter:title" content={episode.title} />
+            <meta property="twitter:description" content={episode.description} />
+            <meta property="twitter:image" content={episode.thumbnail} />
+
+            <title>{episode.title} | Podcastr</title>
+          </Head>
            <div className={styles.thumbnailContainer}>
               <Link href={'/'}>
                 <button type="button">
@@ -42,7 +63,7 @@ export default function Episode({ episode }: EpisodeProps) {
                     objectFit="cover"
                 />
 
-                <button type="button">
+                <button type="button" onClick={() => play(episode)}>
                     <img src="/play.svg" alt="Tocar episódio" />
                </button>
            </div>
